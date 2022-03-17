@@ -28,22 +28,23 @@ h1 {
 }
 
 /* Centering main container */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .wrapper {
   display: flex;
   justify-content: center;
   width: 70%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 
 /* Container inside */
 #main-div {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   color: whitesmoke;
 }
@@ -58,6 +59,25 @@ h1 {
   margin-bottom: 5px;
   font-family: var(--ff);
   letter-spacing: 1px;
+}
+
+/*making calender and clock icons visible*/
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0.8);
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0.8);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  filter: invert(1);
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator:hover {
+  filter: invert(1);
 }
 
 #main-div label {
@@ -95,7 +115,17 @@ h1 {
   margin-top: 1em;
   font-family: var(--ff);
   font-size: var(--font-size);
-  line-height: 1.5;
+  line-height: 1.7;
+}
+
+#timers div {
+  margin-top: 5px;
+  font-size: 2rem;
+  border-bottom: 2px solid rgb(255, 88, 171);
+}
+
+#timers:last-child {
+  transition: 700ms ease-in-out;
 }
 
 @media screen and (min-width: 603px) {
