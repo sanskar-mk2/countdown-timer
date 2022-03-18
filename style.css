@@ -1,5 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* Variables */
+:root {
+  --ff: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --primary-color: #0f0f18;
+  --secondary-color: #242438;
+  --font-size: 1rem;
+  --font-size-small: 13px;
+  --font-size-large: 1.5rem;
+  --letter-spacing: 2px;
+  --font-weight: 600;
+}
+
+body {
+  background-color: #0f0f18;
+}
+
+h1 {
+  font-family: var(--ff);
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 15px;
+}
+
+/* Centering main container */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+}
+
+/* Container inside */
 #main-div {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  color: whitesmoke;
+}
+
+.inpt-box {
+  width: 100%;
+  padding: 6px;
+  background-color: transparent;
+  color: whitesmoke;
+  border: 2px solid rgba(245, 245, 245, 0.446);
+  border-radius: 10px;
+  margin-bottom: 5px;
+  font-family: var(--ff);
+  letter-spacing: 1px;
+}
+
+/*making calender and clock icons visible*/
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0.8);
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0.8);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  filter: invert(1);
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator:hover {
+  filter: invert(1);
+}
+
+#main-div label {
+  font-family: var(--ff);
+  letter-spacing: var(--letter-spacing);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  padding: 5px;
+}
+
+.btn {
+  margin-top: 1em;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: var(--font-size-small);
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 42, 149),
+    rgb(255, 228, 137)
+  );
+}
+
+.inpt-box:focus {
+  outline: none;
+  border: none;
+  border-radius: 0%;
+  border-bottom: 2px solid rgb(255, 88, 171);
+  transition: border-bottom 200ms ease-in-out;
+}
+
+#timers {
+  text-align: center;
+  margin-top: 1em;
+  font-family: var(--ff);
+  font-size: var(--font-size);
+  line-height: 1.7;
+}
+
+#timers div {
+  margin-top: 5px;
+  font-size: 2rem;
+  border-bottom: 2px solid rgb(255, 88, 171);
+}
+
+#timers:last-child {
+  transition: 700ms ease-in-out;
+}
+
+@media screen and (min-width: 603px) {
+  #main-div {
+    width: 100%;
+    padding: 3.5em;
+  }
+  .wrapper {
+    background-color: var(--secondary-color);
+    width: 60%;
+    border-radius: 15px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  #main-div {
+    max-width: 80%;
+  }
 }

@@ -10,15 +10,24 @@
 </head>
 
 <body onload="start()">
-    <div id="main-div">
-        Title<input type="text" id="ititle">
-        DateTime<input type="date" id="idt">
-        DateTime<input type="time" id="itm" value="00:00">
-        <input type="button" id="sbtn" value="start" onclick="set_timer()">
-        <div id="timers">
+    <div class="container">
+        <div class="wrapper">
+            <div id="main-div">
+                <h1>COUNTDOWN TIMER</h1>
+                <label>Title</label>
+                <input class="inpt-box" type="text" id="ititle">
 
+                <label>Date</label>
+                <input class="inpt-box" type="date" id="idt">
+
+                <label>Time</label>
+                <input class="inpt-box" type="time" id="itm" value="00:00">
+                <input class="btn" type="button" id="sbtn" value="start" onclick="set_timer()">
+                <div id="timers"></div>
+            </div>
         </div>
     </div>
+
     <script src="./script.js"></script>
 
 </body>
